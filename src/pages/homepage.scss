@@ -1,16 +1,23 @@
-#header{
-border: 1px solid white;
-    h1{
-        padding-left: 1em;
-    }
+#header {
+  display: flex;
+  padding-left: 1.5em;
+  padding-top: 1.5em;
+
+  h1 {
+    padding-left: 1em;
+    padding-right: 0.5em;
+  }
+
+  .menu-icon {
+    border: 1px solid black;
+  }
 }
 
-#card-grid{
-    padding: 2em;
-    display: flex;
-    align-content: space-around;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    
+#card-grid {
+  padding: 2em;
+  display: flex;
+  align-content: space-around;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }

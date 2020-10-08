@@ -1,29 +1,19 @@
 import React from 'react';
 import './homepage.scss'; 
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Container from '@material-ui/core/Container';
-import Paper from '@material-ui/core/Paper';
-import Divider from '@material-ui/core/Divider';
+import { Link } from 'react-router-dom'
 
 import RecipeReviewCard from '../components/card.component'
 
 
+import AddIcon from '@material-ui/icons/Add';
+import Fab from '@material-ui/core/Fab';
 
 
 export default function Homepage() {
 
 
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <Container maxWidth="lg">
-      
-      <Paper >
-      <div id='header'>
-        <h1>Recipe Box</h1>
-      <Divider variant="middle"  />
-      </div>
-
+<div>
       <div id='card-grid'>
         <RecipeReviewCard />
         <RecipeReviewCard />
@@ -33,9 +23,11 @@ export default function Homepage() {
         <RecipeReviewCard />
       </div>
 
-
-      </Paper> 
-      </Container>
-    </React.Fragment>
+      <div>
+      <Fab >
+      <Link to='/create' id='link'><AddIcon  /></Link> 
+      </Fab>
+      </div>
+      </div>
   );
 }
