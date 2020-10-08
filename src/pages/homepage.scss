@@ -1,0 +1,16 @@
+#header{
+border: 1px solid white;
+    h1{
+        padding-left: 1em;
+    }
+}
+
+#card-grid{
+    padding: 2em;
+    display: flex;
+    align-content: space-around;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
