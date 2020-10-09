@@ -81,8 +81,8 @@ class Create extends Component {
             />
           </div>
           <div class="form-group">
-            <label id="top" for="text">
-              Image Url:
+          <label id="top" for="text">
+              Image URL:
             </label>
             <input
               class="form-control"
@@ -91,14 +91,14 @@ class Create extends Component {
               value={this.state.imageURL}
               onChange={this.handleChange}
             />
-          </div>
+          </div> 
           <div class="form-group">
             <label>Description:</label>
             <textarea
               id="large"
               class="form-control"
               name="description"
-              value={this.state.descriptions}
+              value={this.state.description}
               onChange={this.handleChange}
             />
           </div>

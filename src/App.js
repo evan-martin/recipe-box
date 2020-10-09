@@ -5,7 +5,8 @@ import "./App.scss";
 
 import Homepage from "./pages/homepage";
 import Create from "./pages/create";
-import Read from "/.pages/read"
+import Read from "./pages/read"
+import Update from "./pages/update"
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
@@ -54,8 +55,9 @@ class App extends Component {
                     path="/"
                     render={() => <Homepage recipes={this.state.recipes} />}
                   />
-                  <Route exact path="/create" component={Create} />
+                  <Route path="/create" component={Create} />
                   <Route path='/read/:id' component={Read} />
+                  <Route path='/update/:id' component={Update} />
                 </div>
               </Paper>
             </Container>

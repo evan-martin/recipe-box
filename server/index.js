@@ -36,12 +36,5 @@ const server = http.createServer(app).listen(port, () => {
   console.log(`listening on ${port}`)
 })
 
-//read
-router.get('/',(req,res)=>{
-  Recipe.find((err, result)=>{
-    if (err) console.log(err)
-    res.json(result)
-  })
-})
 
   module.exports = app

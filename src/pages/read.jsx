@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import './Read.css';
+import './read.scss';
 
 class Read extends Component{
 
@@ -40,7 +40,7 @@ class Read extends Component{
           </div>
         <div class="btn-group">
         <div><button type="submit"><Link id="link" to={`/update/${this.state.recipe._id}`}>Edit</Link></button></div>
-        <div><button type="submit" onClick={this.removeRecipe.bind(this, this.state.recipe.id)}>Delete</button></div>
+        {/* <div><button type="submit" onClick={this.removeRecipe.bind(this, this.state.recipe.id)}>Delete</button></div> */}
         <div><button type="submit"><Link id="link" to='/'>Back</Link></button></div>
       </div>
       </div>

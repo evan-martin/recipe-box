@@ -9,7 +9,6 @@ import Fab from "@material-ui/core/Fab";
 
 export default function Homepage({recipes}) {
   return (
-    console.log({recipes}),
     (
       <div>
         <div id="card-grid">

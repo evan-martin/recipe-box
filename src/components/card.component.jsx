@@ -12,28 +12,23 @@ import "./card.styles.scss";
 
 const useStyles = makeStyles(theme => ({
   root: {
+    minHeight:345,
+    maxHeight:345,
     maxWidth: 345,
-    minWidth: 300,
+    minWidth: 345,
     marginBottom: "2em"
   },
   media: {
     height: 0,
     paddingTop: "56.25%" // 16:9
   },
-  expand: {
-    transform: "rotate(0deg)",
-    marginLeft: "auto",
-    transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest
-    })
-  }
 }));
 
-export default function RecipeReviewCard({name, imageURL, description}) {
+export default function RecipeReviewCard({_id, name, imageURL, description}) {
   const classes = useStyles();
 
   return (
-    <Link to="" >
+    <Link to= {`/read/${_id}`} style={{textDecoration: "none"}}>
     <Card className={classes.root}>
       <CardMedia className={classes.media} image={imageURL} />
 
