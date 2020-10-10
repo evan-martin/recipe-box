@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import {Link} from "react-router-dom";
 import {makeStyles} from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
@@ -12,34 +12,38 @@ import "./card.styles.scss";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    minHeight:345,
-    maxHeight:345,
+    minHeight: 345,
+    maxHeight: 345,
     maxWidth: 345,
-    minWidth: 345,
+    minWidth: 325,
     marginBottom: "2em"
   },
   media: {
     height: 0,
-    paddingTop: "56.25%" // 16:9
-  },
+    paddingTop: "56.25%"
+    // 16:9
+  }
 }));
 
 export default function RecipeReviewCard({_id, name, imageURL, description}) {
   const classes = useStyles();
 
   return (
-    <Link to= {`/read/${_id}`} style={{textDecoration: "none"}}>
-    <Card className={classes.root}>
-      <CardMedia className={classes.media} image={imageURL} />
-
-      <CardHeader title={name} />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {description}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing></CardActions>
-    </Card>
-    </Link>
+    <div className="card-component">
+      <Link to={`/read/${_id}`} style={{textDecoration: "none"}}>
+        <Card className={classes.root}>
+          <div className="card-image">
+            <CardMedia className={classes.media} image={imageURL} />
+          </div>
+          <CardHeader title={name} />
+          <CardContent>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {description}
+            </Typography>
+          </CardContent>
+          <CardActions disableSpacing></CardActions>
+        </Card>
+      </Link>
+    </div>
   );
 }

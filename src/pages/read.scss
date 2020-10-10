@@ -1,0 +1,44 @@
+.read-container{
+
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+
+    .page-header{
+      margin-bottom: 2em;
+    }
+
+  .read-banner{
+    display: flex;
+    justify-content: center;
+
+    img{
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      border: 1px solid black;
+    }
+  }
+
+
+.whitespace{
+  margin-top: 1em;
+  white-space: pre-wrap;
+  font-size: 20px;
+
+  .read-paragraph{
+    margin-left: 2em;
+  }
+}
+
+.read-button-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 2em;
+  padding-top: 1em;
+}
+
+}

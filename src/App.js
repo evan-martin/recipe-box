@@ -3,6 +3,7 @@ import axios from "axios";
 import {BrowserRouter, Route, Link} from "react-router-dom";
 import "./App.scss";
 
+
 import Homepage from "./pages/homepage";
 import Create from "./pages/create";
 import Read from "./pages/read"
@@ -15,6 +16,8 @@ import Paper from "@material-ui/core/Paper";
 import Divider from "@material-ui/core/Divider";
 import {ReactComponent as ShoppingIcon} from "./assets/recipe-box-icon.svg";
 import MenuIcon from "@material-ui/icons/Menu";
+import Typography from "@material-ui/core/Typography";
+
 
 class App extends Component {
   constructor(props) {
@@ -42,7 +45,8 @@ class App extends Component {
                 <div id="header">
                   <Link to="/" style={{textDecoration: "none"}}>
                     {" "}
-                    <h1>Recipe Box</h1>
+
+                  <h1>  Recipe Box </h1>
                   </Link>
 
                   <ShoppingIcon className="recipe-box-icon" />

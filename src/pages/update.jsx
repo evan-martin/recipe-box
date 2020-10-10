@@ -151,9 +151,7 @@ class Update extends Component {
                 color="primary"
                 aria-label="text primary button group"
               >
-                <Button type="submit" value="Submit">
-                  Update
-                </Button>
+
 
                 <Button
                   color="primary"
@@ -164,6 +162,10 @@ class Update extends Component {
                   }
                 >
                   Cancel
+                </Button>
+
+                <Button type="submit" value="Submit">
+                  Update
                 </Button>
               </ButtonGroup>
             </div>
