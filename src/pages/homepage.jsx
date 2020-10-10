@@ -6,6 +6,7 @@ import RecipeReviewCard from "../components/card.component";
 
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
+import Tooltip from '@material-ui/core/Tooltip';
 
 export default function Homepage({recipes}) {
   return (
@@ -17,12 +18,14 @@ export default function Homepage({recipes}) {
           ))}
         </div>
 
-        <div>
-          <Link to="/create" id="link">
-            <Fab>
+        <div className="footer">
+        <Tooltip title="Add New Recipe!">
+          <Link to="/create" className="new-recipe-button">
+            <Fab color="primary">
               <AddIcon />
             </Fab>
           </Link>
+          </Tooltip>
         </div>
       </div>
     )

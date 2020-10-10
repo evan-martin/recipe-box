@@ -1,0 +1,23 @@
+.form-container{
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+
+.button-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  padding-top: 1em;
+
+  .submit-btn-group{
+    display: flex;
+
+
+  }
+}
+
+
+}
