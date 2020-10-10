@@ -7,6 +7,7 @@ import Homepage from "./pages/homepage";
 import Create from "./pages/create";
 import Read from "./pages/read"
 import Update from "./pages/update"
+import ScrollToTop from "./components/top-scroll.jsx"
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
@@ -32,6 +33,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
+      <ScrollToTop />
         <div>
           <React.Fragment>
             <CssBaseline />
