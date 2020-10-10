@@ -140,13 +140,13 @@ class Update extends Component {
               onChange={this.handleChange}
             />
 
-            <div className="button-bar">
+            <div className="update-button-bar">
               <Button variant="text" color="secondary">
                 Delete
               </Button>
 
               <ButtonGroup
-                className="submit-btn-group"
+                className="update-btn-group"
                 variant="text"
                 color="primary"
                 aria-label="text primary button group"

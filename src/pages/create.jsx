@@ -3,6 +3,11 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 import "./create.scss";
 
+import TextField from "@material-ui/core/TextField";
+import {Input, FormControl, OutlinedInput, InputLabel} from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+
 class Create extends Component {
   constructor(props) {
     super(props);
@@ -63,86 +68,114 @@ class Create extends Component {
   render() {
     const isEnabled = this.canSubmit();
     return (
-      <div id="back" class="container">
-        <div class="page-header">
-          <h2 id="head">New Recipe</h2>
+      <div className="form-container">
+        <div>
+          <h2>New Recipe</h2>
         </div>
-        <form onSubmit={this.handleSubmit}>
-          <div class="form-group">
-            <label id="top" for="text">
-              Name:
-            </label>
-            <input
-              class="form-control"
+
+        <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
+          <div>
+            <TextField
+              margin="normal"
+              label="Name"
+              variant="outlined"
               type="text"
               name="name"
+              defaultValue=" "
               value={this.state.name}
               onChange={this.handleChange}
             />
-          </div>
-          <div class="form-group">
-          <label id="top" for="text">
-              Image URL:
-            </label>
-            <input
-              class="form-control"
+            <TextField
+              margin="normal"
+              label="Image Url"
+              fullWidth
+              variant="outlined"
               type="text"
               name="imageURL"
+              defaultValue=" "
               value={this.state.imageURL}
               onChange={this.handleChange}
             />
-          </div> 
-          <div class="form-group">
-            <label>Description:</label>
-            <textarea
-              id="large"
-              class="form-control"
+            <TextField
+              margin="normal"
+              fullWidth
+              label="Description"
+              type="text"
               name="description"
+              multiline
+              rows={3}
+              variant="outlined"
+              defaultValue=" "
               value={this.state.description}
               onChange={this.handleChange}
             />
-          </div>
-          <div class="form-group">
-            <label>Ingredients:</label>
-            <textarea
-              id="large"
-              class="form-control"
+            <TextField
+              margin="normal"
+              fullWidth
+              label="Ingredients"
+              type="text"
               name="ingredients"
+              multiline
+              rows={20}
+              variant="outlined"
+              defaultValue=" "
               value={this.state.ingredients}
               onChange={this.handleChange}
             />
-          </div>
-          <div class="form-group">
-            <label>Method:</label>
-            <textarea
-              id="large"
-              class="form-control"
+            <TextField
+              margin="normal"
+              fullWidth
+              label="Method"
+              type="text"
               name="method"
+              multiline
+              rows={20}
+              variant="outlined"
+              defaultValue=" "
               value={this.state.method}
               onChange={this.handleChange}
             />
-          </div>
-          <div class="form-group">
-            <label>Notes:</label>
-            <textarea
-              class="form-control"
+            <TextField
+              margin="normal"
+              fullWidth
+              label="Notes"
+              type="text"
               name="notes"
+              multiline
+              rows={10}
+              variant="outlined"
+              defaultValue=" "
               value={this.state.notes}
               onChange={this.handleChange}
             />
-          </div>
-          <div class="foot">
-            <input disabled={!isEnabled} type="submit" value="Submit" />
-            <button type="submit">
-              <Link to="/" id="link">
-                Cancel
-              </Link>
-            </button>
+
+            <div className="submit-button-bar">
+
+              <ButtonGroup
+                className="submit-btn-group"
+                variant="text"
+                color="primary"
+                aria-label="text primary button group"
+              >
+                <Button type="submit" value="Submit">
+                  Submit
+                </Button>
+
+                <Button
+                  onClick={() =>
+                    this.props.history.push(
+                      "/"
+                    )
+                  }
+                >
+                  Cancel
+                </Button>
+              </ButtonGroup>
+            </div>
           </div>
         </form>
       </div>
     );
   }
 }
-
 export default Create;
