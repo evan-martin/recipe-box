@@ -5,6 +5,7 @@ import "./read.scss";
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Typography from "@material-ui/core/Typography";
+import Divider from "@material-ui/core/Divider";
 
 class Read extends Component {
   constructor(props) {
@@ -30,28 +31,38 @@ class Read extends Component {
     return (
       <div class="read-container">
         <div class="page-header">
-        <Typography variant="h4" color="textPrimary" >
+          <h1>
           {this.state.recipe.name}
-          </Typography>
+          </h1>
         </div>
         <div class="read-banner">
           <img className="read-image" src={this.state.recipe.imageURL} />
         </div>
 
         <div className="whitespace">
-        <Typography variant="h5" color="textPrimary" >
-          Ingredients
-          </Typography>
+
+
+
+          <h3>Ingredients</h3>
+
+          <Divider />
+
           <Typography className="read-paragraph" variant="body1" color="textPrimary" component="p">
           {this.state.recipe.ingredients}
           </Typography>
 
+
+
           <h3>Method</h3>
+          <Divider />
           <Typography className="read-paragraph" variant="body1" color="textPrimary" component="p">
           {this.state.recipe.method}
           </Typography>
           <h3>Notes:</h3>
-          <p className="read-paragraph">{this.state.recipe.notes}</p>
+          <Divider />
+          <Typography className="read-paragraph" variant="body1" color="textPrimary" component="p">
+          {this.state.recipe.notes}
+          </Typography>
         </div>
         <div className="read-button-bar">
           <ButtonGroup
