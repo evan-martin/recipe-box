@@ -18,9 +18,10 @@ import {ReactComponent as ShoppingIcon} from "./assets/recipe-box-icon.svg";
 import Typography from "@material-ui/core/Typography";
 import DropdownMenu from "./components/menu.component.jsx";
 import Header from "./components/header.component.jsx";
+import About from "./pages/about.jsx"
 
 class App extends Component {
-  
+
   render() {
     return (
       <BrowserRouter>
@@ -39,6 +40,7 @@ class App extends Component {
                   <Route path="/create" component={Create} />
                   <Route path="/read/:id" component={Read} />
                   <Route path="/update/:id" component={Update} />
+                  <Route path="/about" component={About} />
                 </div>
               </Paper>
             </Container>

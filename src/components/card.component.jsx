@@ -12,8 +12,7 @@ import "./card.styles.scss";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    minHeight: 320,
-    maxHeight: 400,
+    minHeight: 325,
     maxWidth: 325,
     minWidth: 325,
     marginBottom: "3em"

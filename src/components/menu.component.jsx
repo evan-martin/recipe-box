@@ -34,27 +34,24 @@ export default function DropdownMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>
-          <Link className="link" to="/" style={{textDecoration: "none"}}>
-            Home
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link className="link" to="/Create" style={{textDecoration: "none"}}>
-            New Recipe
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>About</MenuItem>
+        <Link className="link" to="/" style={{textDecoration: "none"}}>
+          <MenuItem onClick={handleClose}>Home</MenuItem>
+        </Link>
 
-        <MenuItem onClick={handleClose}>
-          <a
-            href="https://github.com/evan-martin/recipe-box"
-            style={{textDecoration: "none"}}
-            target="_blank"
-          >
-            GitHub
-          </a>
-        </MenuItem>
+        <Link className="link" to="/Create" style={{textDecoration: "none"}}>
+          <MenuItem onClick={handleClose}>New Recipe</MenuItem>
+        </Link>
+        <Link className="link" to="/about" style={{textDecoration: "none"}}>
+          <MenuItem onClick={handleClose}>About</MenuItem>
+        </Link>
+
+        <a
+          href="https://github.com/evan-martin/recipe-box"
+          style={{textDecoration: "none"}}
+          target="_blank"
+        >
+          <MenuItem onClick={handleClose}>GitHub</MenuItem>
+        </a>
       </Menu>
     </div>
   );
