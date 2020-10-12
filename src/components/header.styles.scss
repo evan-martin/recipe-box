@@ -13,6 +13,12 @@
       padding-right: 0.5em;
       color: black;
     }
+
+    @media only screen and (max-width: 600px) {
+      h1 {
+        padding-left: 0em;
+      }
+    }
   }
 
   .menu {
@@ -20,4 +26,12 @@
     justify-content: flex-end;
     padding-right: 2em;
   }
+
+  @media only screen and (max-width: 600px) {
+    .menu {
+      padding-right: 0em;
+    }
+  }
+
+
 }

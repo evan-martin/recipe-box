@@ -14,7 +14,8 @@ export default function Homepage({recipes}) {
     <div>
       <div className="search-bar">
         <SearchIcon />
-        <input type="text" placeholder="Search by name!" />
+        <input type="text" placeholder="Search by name!"
+        onChange={e=> console.log(e.target.value)} />
       </div>
       <div id="card-grid">
         {recipes.map(({id, ...otherSectionProps}) => (

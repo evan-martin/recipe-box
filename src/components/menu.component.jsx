@@ -39,6 +39,11 @@ export default function DropdownMenu() {
             Home
           </Link>
         </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link className="link" to="/Create" style={{textDecoration: "none"}}>
+            New Recipe
+          </Link>
+        </MenuItem>
         <MenuItem onClick={handleClose}>About</MenuItem>
 
         <MenuItem onClick={handleClose}>

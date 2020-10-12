@@ -23,7 +23,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      recipes: []
+      recipes: [],
+      searchTerm: "",
     };
   }
 
@@ -34,6 +35,9 @@ class App extends Component {
   }
 
   render() {
+    const { recipes, searchTerm } = this.state;
+    const filteredRecipes = recipes.filter(recipe =>
+      recipe.name.toLowerCase().includes(searchTerm.toLowerCase()))
     return (
       <BrowserRouter>
         <ScrollToTop />
@@ -44,6 +48,8 @@ class App extends Component {
               <Paper>
                 <Header />
                 <div>
+                <input type="text" placeholder="Search by name!"
+                onChange={e=> this.setState({ searchTerm: e.target.value })} />
                   <Divider variant="middle" />
                 </div>
 
@@ -51,7 +57,7 @@ class App extends Component {
                   <Route
                     exact
                     path="/"
-                    render={() => <Homepage recipes={this.state.recipes} />}
+                    render={() => <Homepage recipes={filteredRecipes} />}
                   />
                   <Route path="/create" component={Create} />
                   <Route path="/read/:id" component={Read} />
