@@ -151,8 +151,6 @@ class Update extends Component {
                 color="primary"
                 aria-label="text primary button group"
               >
-
-
                 <Button
                   color="primary"
                   onClick={() =>

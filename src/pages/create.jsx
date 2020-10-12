@@ -150,7 +150,6 @@ class Create extends Component {
             />
 
             <div className="submit-button-bar">
-
               <ButtonGroup
                 className="submit-btn-group"
                 variant="text"
@@ -161,13 +160,7 @@ class Create extends Component {
                   Submit
                 </Button>
 
-                <Button
-                  onClick={() =>
-                    this.props.history.push(
-                      "/"
-                    )
-                  }
-                >
+                <Button onClick={() => this.props.history.push("/")}>
                   Cancel
                 </Button>
               </ButtonGroup>

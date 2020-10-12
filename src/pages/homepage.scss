@@ -1,4 +1,8 @@
-
+.search-bar {
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
+}
 
 #card-grid {
   padding: 2em;
@@ -9,14 +13,12 @@
   flex-wrap: wrap;
 }
 
-
-.footer{
+.footer {
   display: flex;
   justify-content: flex-end;
 
-.new-recipe-button{
-  padding-bottom: 2em;
-  padding-right: 2em;
-}
-
+  .new-recipe-button {
+    padding-bottom: 2em;
+    padding-right: 2em;
+  }
 }

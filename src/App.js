@@ -3,21 +3,21 @@ import axios from "axios";
 import {BrowserRouter, Route, Link} from "react-router-dom";
 import "./App.scss";
 
-
 import Homepage from "./pages/homepage";
 import Create from "./pages/create";
-import Read from "./pages/read"
-import Update from "./pages/update"
-import ScrollToTop from "./components/top-scroll.jsx"
+import Read from "./pages/read";
+import Update from "./pages/update";
+import ScrollToTop from "./components/top-scroll.jsx";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Divider from "@material-ui/core/Divider";
 import {ReactComponent as ShoppingIcon} from "./assets/recipe-box-icon.svg";
-import MenuIcon from "@material-ui/icons/Menu";
-import Typography from "@material-ui/core/Typography";
 
+import Typography from "@material-ui/core/Typography";
+import DropdownMenu from "./components/menu.component.jsx";
+import Header from "./components/header.component.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -36,21 +36,13 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-      <ScrollToTop />
+        <ScrollToTop />
         <div>
           <React.Fragment>
             <CssBaseline />
             <Container maxWidth="lg">
               <Paper>
-                <div id="header">
-                  <Link to="/" style={{textDecoration: "none"}}>
-                    {" "}
-
-                  <h1>  Recipe Box </h1>
-                  </Link>
-
-                  <ShoppingIcon className="recipe-box-icon" />
-                </div>
+                <Header />
                 <div>
                   <Divider variant="middle" />
                 </div>
@@ -62,8 +54,8 @@ class App extends Component {
                     render={() => <Homepage recipes={this.state.recipes} />}
                   />
                   <Route path="/create" component={Create} />
-                  <Route path='/read/:id' component={Read} />
-                  <Route path='/update/:id' component={Update} />
+                  <Route path="/read/:id" component={Read} />
+                  <Route path="/update/:id" component={Update} />
                 </div>
               </Paper>
             </Container>

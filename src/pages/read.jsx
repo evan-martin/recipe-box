@@ -31,37 +31,45 @@ class Read extends Component {
     return (
       <div class="read-container">
         <div class="page-header">
-          <h1>
-          {this.state.recipe.name}
-          </h1>
+          <h1>{this.state.recipe.name}</h1>
         </div>
         <div class="read-banner">
           <img className="read-image" src={this.state.recipe.imageURL} />
         </div>
 
         <div className="whitespace">
-
-
-
           <h3>Ingredients</h3>
 
           <Divider />
 
-          <Typography className="read-paragraph" variant="body1" color="textPrimary" component="p">
-          {this.state.recipe.ingredients}
+          <Typography
+            className="read-paragraph"
+            variant="body1"
+            color="textPrimary"
+            component="p"
+          >
+            {this.state.recipe.ingredients}
           </Typography>
-
-
 
           <h3>Method</h3>
           <Divider />
-          <Typography className="read-paragraph" variant="body1" color="textPrimary" component="p">
-          {this.state.recipe.method}
+          <Typography
+            className="read-paragraph"
+            variant="body1"
+            color="textPrimary"
+            component="p"
+          >
+            {this.state.recipe.method}
           </Typography>
           <h3>Notes:</h3>
           <Divider />
-          <Typography className="read-paragraph" variant="body1" color="textPrimary" component="p">
-          {this.state.recipe.notes}
+          <Typography
+            className="read-paragraph"
+            variant="body1"
+            color="textPrimary"
+            component="p"
+          >
+            {this.state.recipe.notes}
           </Typography>
         </div>
         <div className="read-button-bar">

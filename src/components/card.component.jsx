@@ -12,11 +12,11 @@ import "./card.styles.scss";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    minHeight: 345,
-    maxHeight: 345,
-    maxWidth: 345,
+    minHeight: 320,
+    maxHeight: 400,
+    maxWidth: 325,
     minWidth: 325,
-    marginBottom: "2em"
+    marginBottom: "3em"
   },
   media: {
     height: 0,
@@ -35,13 +35,14 @@ export default function RecipeReviewCard({_id, name, imageURL, description}) {
           <div className="card-image">
             <CardMedia className={classes.media} image={imageURL} />
           </div>
-          <CardHeader title={name} />
+          <div className="recipe-name">
+            <h2>{name} </h2>
+          </div>
           <CardContent>
             <Typography variant="body2" color="textSecondary" component="p">
               {description}
             </Typography>
           </CardContent>
-          <CardActions disableSpacing></CardActions>
         </Card>
       </Link>
     </div>
