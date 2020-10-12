@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import axios from "axios";
+
 import {BrowserRouter, Route, Link} from "react-router-dom";
 import "./App.scss";
 
@@ -20,24 +20,8 @@ import DropdownMenu from "./components/menu.component.jsx";
 import Header from "./components/header.component.jsx";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      recipes: [],
-      searchTerm: "",
-    };
-  }
-
-  componentDidMount() {
-    axios.get("/recipe").then(res => {
-      this.setState({recipes: res.data});
-    });
-  }
-
+  
   render() {
-    const { recipes, searchTerm } = this.state;
-    const filteredRecipes = recipes.filter(recipe =>
-      recipe.name.toLowerCase().includes(searchTerm.toLowerCase()))
     return (
       <BrowserRouter>
         <ScrollToTop />
@@ -48,17 +32,10 @@ class App extends Component {
               <Paper>
                 <Header />
                 <div>
-                <input type="text" placeholder="Search by name!"
-                onChange={e=> this.setState({ searchTerm: e.target.value })} />
                   <Divider variant="middle" />
                 </div>
-
                 <div>
-                  <Route
-                    exact
-                    path="/"
-                    render={() => <Homepage recipes={filteredRecipes} />}
-                  />
+                  <Route exact path="/" component={Homepage} />
                   <Route path="/create" component={Create} />
                   <Route path="/read/:id" component={Read} />
                   <Route path="/update/:id" component={Update} />

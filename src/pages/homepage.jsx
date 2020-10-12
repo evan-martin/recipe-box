@@ -1,5 +1,6 @@
-import React from "react";
+import React, {Component} from "react";
 import "./homepage.scss";
+import axios from "axios";
 import {Link} from "react-router-dom";
 
 import RecipeReviewCard from "../components/card.component";
@@ -8,30 +9,52 @@ import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Tooltip from "@material-ui/core/Tooltip";
 import SearchIcon from "@material-ui/icons/Search";
+import CardList from "../components/card-list.component.jsx"
 
-export default function Homepage({recipes}) {
-  return (
-    <div>
-      <div className="search-bar">
-        <SearchIcon />
-        <input type="text" placeholder="Search by name!"
-        onChange={e=> console.log(e.target.value)} />
-      </div>
-      <div id="card-grid">
-        {recipes.map(({id, ...otherSectionProps}) => (
-          <RecipeReviewCard key={id} {...otherSectionProps} />
-        ))}
-      </div>
+class Homepage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      recipes: [],
+      searchTerm: ""
+    };
+  }
 
-      <div className="footer">
-        <Tooltip title="Add New Recipe!">
-          <Link to="/create" className="new-recipe-button">
-            <Fab color="primary">
-              <AddIcon />
-            </Fab>
-          </Link>
-        </Tooltip>
+  componentDidMount() {
+    axios.get("/recipe").then(res => {
+      this.setState({recipes: res.data});
+    });
+  }
+
+  render() {
+    const {recipes, searchTerm} = this.state;
+    const filteredRecipes = recipes.filter(recipe =>
+      recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    return (
+      <div>
+        <div className="search-bar">
+          <SearchIcon />
+          <input
+            type="text"
+            placeholder="Search by name!"
+            onChange={e=> this.setState({ searchTerm: e.target.value })}
+          />
+        </div>
+        <CardList recipes={filteredRecipes} />
+
+        <div className="footer">
+          <Tooltip title="Add New Recipe!">
+            <Link to="/create" className="new-recipe-button">
+              <Fab color="primary">
+                <AddIcon />
+              </Fab>
+            </Link>
+          </Tooltip>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
+
+export default Homepage;
