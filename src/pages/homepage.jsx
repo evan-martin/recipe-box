@@ -6,10 +6,9 @@ import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Tooltip from "@material-ui/core/Tooltip";
 import SearchIcon from "@material-ui/icons/Search";
-import SpacingGrid from "../components/card-grid.component.jsx"
-import TextField from '@material-ui/core/TextField';
-import InputAdornment from '@material-ui/core/InputAdornment';
-
+import SpacingGrid from "../components/card-grid.component.jsx";
+import TextField from "@material-ui/core/TextField";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 import "./homepage.scss";
 
@@ -36,28 +35,25 @@ class Homepage extends Component {
     return (
       <div>
         <div className="search-bar">
-          
-                <TextField 
-                placeholder="Search by name!"
-               InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchIcon />
-                  </InputAdornment>
-                ),
-              }}
-              variant="outlined" 
-              size="small"
-              type="text"
-              onChange={e=> this.setState({ searchTerm: e.target.value })}
-              />
-
+          <TextField
+            placeholder="Search by name!"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              )
+            }}
+            variant="outlined"
+            size="small"
+            type="text"
+            onChange={e => this.setState({searchTerm: e.target.value})}
+          />
         </div>
-        
-        <SpacingGrid recipes={filteredRecipes}/>
+
+        <SpacingGrid recipes={filteredRecipes} />
 
         <div className="footer">
-
           <Tooltip title="Add New Recipe!">
             <Link to="/create" className="new-recipe-button">
               <Fab color="primary">

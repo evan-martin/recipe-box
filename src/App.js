@@ -6,7 +6,7 @@ import Create from "./pages/create";
 import Read from "./pages/read";
 import Update from "./pages/update";
 import Header from "./components/header.component.jsx";
-import About from "./pages/about.jsx"
+import About from "./pages/about.jsx";
 import ScrollToTop from "./components/top-scroll.jsx";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -16,9 +16,7 @@ import Divider from "@material-ui/core/Divider";
 
 import "./App.scss";
 
-
 class App extends Component {
-
   render() {
     return (
       <BrowserRouter>

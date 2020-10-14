@@ -44,7 +44,11 @@ class Read extends Component {
           </Typography>
         </div>
         <div class="read-banner">
-          <img className="read-image" src={this.state.recipe.imageURL} alt="recipe" />
+          <img
+            className="read-image"
+            src={this.state.recipe.imageURL}
+            alt="recipe"
+          />
         </div>
 
         <div className="whitespace">
