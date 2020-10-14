@@ -1,24 +1,21 @@
 import React, {Component} from "react";
-
-import {BrowserRouter, Route, Link} from "react-router-dom";
-import "./App.scss";
+import {BrowserRouter, Route} from "react-router-dom";
 
 import Homepage from "./pages/homepage";
 import Create from "./pages/create";
 import Read from "./pages/read";
 import Update from "./pages/update";
+import Header from "./components/header.component.jsx";
+import About from "./pages/about.jsx"
 import ScrollToTop from "./components/top-scroll.jsx";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Divider from "@material-ui/core/Divider";
-import {ReactComponent as ShoppingIcon} from "./assets/recipe-box-icon.svg";
 
-import Typography from "@material-ui/core/Typography";
-import DropdownMenu from "./components/menu.component.jsx";
-import Header from "./components/header.component.jsx";
-import About from "./pages/about.jsx"
+import "./App.scss";
+
 
 class App extends Component {
 

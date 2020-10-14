@@ -1,9 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import "./header.styles.scss";
-import DropdownMenu from "./menu.component.jsx";
 
+import DropdownMenu from "./menu.component.jsx";
 import {ReactComponent as ShoppingIcon} from "../assets/recipe-box-icon.svg";
+
+import "./header.styles.scss";
 
 export default function Header() {
   return (

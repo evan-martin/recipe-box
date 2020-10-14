@@ -1,11 +1,13 @@
 import React, {Component} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
-import "./read.scss";
+
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
+
+import "./read.scss";
 
 class Read extends Component {
   constructor(props) {
@@ -32,9 +34,17 @@ class Read extends Component {
       <div class="read-container">
         <div class="page-header">
           <h1>{this.state.recipe.name}</h1>
+          <Typography
+            className="description"
+            variant="body1"
+            color="textPrimary"
+            component="p"
+          >
+            {this.state.recipe.description}
+          </Typography>
         </div>
         <div class="read-banner">
-          <img className="read-image" src={this.state.recipe.imageURL} />
+          <img className="read-image" src={this.state.recipe.imageURL} alt="recipe" />
         </div>
 
         <div className="whitespace">

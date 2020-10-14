@@ -1,0 +1,47 @@
+.grid-container{
+  display: flex;
+  justify-self: center;
+
+  .grid{
+    margin: 24px;
+
+  }
+
+
+.paper{
+  height: 365;
+  width: 325;
+  display: flex;
+  flex-direction: column;
+
+.card-image-container{
+  width:325px;
+  height: 280px;
+  object-fit: contain;
+
+  
+
+
+.media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+}
+&:hover {
+  .media {
+    opacity: 0.8;
+    transform: scale(1.03);
+    transition: transform 3s cubic-bezier(0.25, 0.25, 0.25, 0.25);
+  }
+}
+
+.recipe-title{
+  max-width: 300px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+
+}
+}

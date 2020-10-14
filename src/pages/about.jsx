@@ -1,5 +1,7 @@
 import React from "react";
+
 import Typography from "@material-ui/core/Typography";
+
 import "./about.scss"
 
 export default function About() {
