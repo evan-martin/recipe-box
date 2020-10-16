@@ -10,18 +10,17 @@ export default function SpacingGrid({recipes}) {
   return (
     <div className="grid-container">
       <Grid container className="root">
-        <Grid  container justify="center" spacing={6} className="grid">
+        <Grid container justify="center" spacing={4} className="grid">
           {recipes.map(({_id, name, imageURL}) => (
-            <Grid  item>
+            <Grid item>
               <Link to={`/read/${_id}`} style={{textDecoration: "none"}}>
-                <Paper className="paper">
-                  <div className="card-image-container">
-                    <img className="media" src={imageURL} alt="recipe" />
-                  </div>
-                  <div className="recipe-title">
-                    <h2>{name}</h2>
-                  </div>
-                </Paper>
+                <div className="card-image-container">
+                  <img className="media" src={imageURL} alt="recipe" />
+                </div>
+
+                <div className="recipe-title">
+                  <h2>{name}</h2>
+                </div>
               </Link>
             </Grid>
           ))}
