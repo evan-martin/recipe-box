@@ -24,9 +24,10 @@ class App extends Component {
         <div>
           <React.Fragment>
             <CssBaseline />
+            <Header />
             <Container maxWidth="lg">
-              <Paper>
-                <Header />
+            
+                
                 <div>
                   <Divider variant="middle" />
                 </div>
@@ -37,7 +38,7 @@ class App extends Component {
                   <Route path="/update/:id" component={Update} />
                   <Route path="/about" component={About} />
                 </div>
-              </Paper>
+             
             </Container>
           </React.Fragment>
         </div>

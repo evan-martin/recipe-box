@@ -46,7 +46,7 @@ class Homepage extends Component {
             }}
             variant="outlined"
             size="small"
-            type="text"
+            type="search"
             onChange={e => this.setState({searchTerm: e.target.value})}
           />
         </div>

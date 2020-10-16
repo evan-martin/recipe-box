@@ -6,20 +6,19 @@
     width: 325px;
     height: 280px;
     object-fit: contain;
-    background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(167,167,167,1) 100%);
+    //background: rgb(0,0,0);
+    //background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(167,167,167,1) 100%);
     z-index: -2;
 
     .media {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.5;
     }
 
     &:hover {
       .media {
-        opacity: 0.9;
+       // opacity: 0.9;
         transform: scale(1.03);
         transition: transform 3s cubic-bezier(0.25, 0.25, 0.25, 0.25);
       }
@@ -28,10 +27,26 @@
 
   .recipe-title {
     width: 300px;
-    height: 100px;
-    color: white;
-    margin-top: -6em;
-    margin-left: 1em;
+    margin-top: -5.5em;
     position: absolute;
   }
+
+  .recipe-title::after {
+    content: "";
+    position: absolute;
+    padding-right: 25px;
+    top: 0;
+    left: 0;
+    width: 325px;
+    height: 77px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  padding-left: .5em;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
 }

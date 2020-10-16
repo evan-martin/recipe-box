@@ -3,6 +3,7 @@
   padding-left: 1.5em;
   padding-top: 1.5em;
   justify-content: space-between;
+  //background-color:#6e6e6e;
 
   .logo {
     display: flex;
@@ -11,8 +12,13 @@
     h1 {
       padding-left: 1em;
       padding-right: 0.5em;
-      color: black;
+      //color: white;
     }
+    .recipe-box-icon{
+      //-webkit-filter: invert(100%);
+    }
+
+
     @media only screen and (max-width: 600px) {
       h1 {
         padding-left: 0;
@@ -24,6 +30,7 @@
     align-self: center;
     justify-content: flex-end;
     padding-right: 2em;
+    
   }
   @media only screen and (max-width: 600px) {
     .menu {

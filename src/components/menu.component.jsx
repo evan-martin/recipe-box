@@ -26,7 +26,7 @@ export default function DropdownMenu() {
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <MenuIcon />
+        <MenuIcon className="icon"/>
       </Button>
       <Menu
         id="simple-menu"
