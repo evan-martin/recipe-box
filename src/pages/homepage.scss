@@ -1,3 +1,8 @@
+.banner {
+  display: flex;
+  justify-content: center;
+}
+
 .search-bar {
   display: flex;
   justify-content: center;
@@ -8,9 +13,12 @@
 .footer {
   display: flex;
   justify-content: flex-end;
+  padding-bottom: 5em;
 
   .new-recipe-button {
     padding-bottom: 2em;
     padding-right: 2em;
+    bottom: 0;
+    position: fixed;
   }
 }

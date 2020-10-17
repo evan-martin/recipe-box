@@ -1,0 +1,22 @@
+.banner-header {
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url("https://www.phoenixfm.com/wp-content/uploads/2020/08/heart-healthy-food-1580231690.jpg");
+  background-size: cover;
+  height: 500px;
+  margin-top: 90px;
+
+  .banner-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    color: white;
+    text-align: center;
+
+    h1 {
+      margin: 0;
+      font-size: 3rem;
+      white-space: nowrap;
+    }
+  }
+}

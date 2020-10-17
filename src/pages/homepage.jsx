@@ -9,6 +9,9 @@ import SearchIcon from "@material-ui/icons/Search";
 import SpacingGrid from "../components/card-grid.component.jsx";
 import TextField from "@material-ui/core/TextField";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import Banner from "../components/banner.component.jsx";
+import Container from "@material-ui/core/Container";
+import ScrollToTop from "../components/top-scroll.jsx";
 
 import "./homepage.scss";
 
@@ -34,34 +37,39 @@ class Homepage extends Component {
     );
     return (
       <div>
-        <div className="search-bar">
-          <TextField
-            placeholder="Search by name!"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon />
-                </InputAdornment>
-              )
-            }}
-            variant="outlined"
-            size="small"
-            type="search"
-            onChange={e => this.setState({searchTerm: e.target.value})}
-          />
+        <div className="banner">
+          <Banner name="Explore" />
         </div>
+        <Container maxWidth="lg">
+          <div className="search-bar">
+            <TextField
+              placeholder="Search by name!"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchIcon />
+                  </InputAdornment>
+                )
+              }}
+              variant="outlined"
+              size="small"
+              type="search"
+              onChange={e => this.setState({searchTerm: e.target.value})}
+            />
+          </div>
 
-        <SpacingGrid recipes={filteredRecipes} />
+          <SpacingGrid recipes={filteredRecipes} />
 
-        <div className="footer">
-          <Tooltip title="Add New Recipe!">
-            <Link to="/create" className="new-recipe-button">
-              <Fab color="primary">
-                <AddIcon />
-              </Fab>
-            </Link>
-          </Tooltip>
-        </div>
+          <div className="footer">
+            <Tooltip title="Add New Recipe!">
+              <Link to="/create" className="new-recipe-button">
+                <Fab color="primary">
+                  <AddIcon />
+                </Fab>
+              </Link>
+            </Tooltip>
+          </div>
+        </Container>
       </div>
     );
   }
