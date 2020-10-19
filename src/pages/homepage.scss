@@ -3,6 +3,39 @@
   justify-content: center;
 }
 
+.category-bar{
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+
+.avatar{
+  display: flex;
+  flex-direction: column;
+  padding-left: 2em;
+  padding-right: 2em;
+ 
+ cursor: pointer;
+
+  img{
+    display: flex;
+    width:75px;
+    height: 75px;
+    border-radius: 50%;
+
+    justify-items: center;
+  }
+
+  p{
+    display: flex;
+    justify-content: center;
+    //color: white;
+    
+  }
+  
+}
+}
+
 .search-bar {
   display: flex;
   justify-content: center;

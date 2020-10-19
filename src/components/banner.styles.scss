@@ -1,7 +1,7 @@
 .banner-header {
   width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url("https://www.phoenixfm.com/wp-content/uploads/2020/08/heart-healthy-food-1580231690.jpg");
-  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url("https://media3.s-nbcnews.com/j/newscms/2019_41/3044956/191009-cooking-vegetables-al-1422_ae181a762406ae9dce02dd0d5453d1ba.fit-2000w.jpg");
+  background-size: auto;
   height: 500px;
   margin-top: 90px;
   display: flex;
@@ -10,7 +10,7 @@
   .banner-title {
     position: absolute;
     align-self: center;
-    transform: translate(0, 130%);
+    transform: translate(0, 90%);
     color: white;
     text-align: center;
 
