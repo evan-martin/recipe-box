@@ -20,6 +20,8 @@ import MailIcon from "@material-ui/icons/Mail";
 
 import {ReactComponent as ShoppingIcon} from "../assets/recipe-box-icon.svg";
 
+import { Link } from "react-router-dom"
+
 import "./menu-drawer.styles.scss";
 
 const drawerWidth = 240;
@@ -50,10 +52,12 @@ const useStyles = makeStyles(theme => ({
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0
+    flexShrink: 0,
+    
   },
   drawerPaper: {
-    width: drawerWidth
+    width: drawerWidth,
+    backgroundColor: "black",
   },
   drawerHeader: {
     display: "flex",
@@ -104,11 +108,19 @@ export default function PersistentDrawerRight() {
           [classes.appBarShift]: open
         })}
       >
-        <Toolbar>
-          <Typography variant="h6" noWrap className={classes.menuTitle}>
+        <Toolbar id="header">
+          <div className='recipe-box-name'>
+          <Link className="link" to="/" style={{textDecoration: "none"}}>
+            
+          <h1 >
             Recipe Box
+          </h1>
+          </Link>
+         
             <ShoppingIcon className="recipe-box-icon" />
-          </Typography>
+
+          </div>
+          
 
           <IconButton
             color="inherit"
@@ -131,8 +143,8 @@ export default function PersistentDrawerRight() {
           paper: classes.drawerPaper
         }}
       >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
+        <div className={classes.drawerHeader} onClick={handleDrawerClose} style={{cursor: "pointer"}}>
+          <IconButton style={{color: "white"}} >
             {theme.direction === "rtl" ? (
               <ChevronLeftIcon />
             ) : (
@@ -142,14 +154,36 @@ export default function PersistentDrawerRight() {
         </div>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+
+        <Link className="link" to="/" style={{textDecoration: "none"}}>
+            <ListItem button >
+              <ListItemText primary={"Home"} style={{color: "white"}} />
             </ListItem>
-          ))}
+            </Link>
+
+            <Link className="link" to="/create" style={{textDecoration: "none"}}>
+            <ListItem button >
+              <ListItemText primary={"New Recipe"} style={{color: "white"}}/>
+            </ListItem>
+            </Link>
+
+            <Link className="link" to="/about" style={{textDecoration: "none"}}>
+            <ListItem button >
+              <ListItemText primary={"About"} style={{color: "white"}}/>
+            </ListItem>
+
+            </Link> 
+
+            <a
+          href="https://github.com/evan-martin/recipe-box"
+          style={{textDecoration: "none"}}
+          target="_blank"
+        >
+            <ListItem button >
+              <ListItemText primary={"GitHub"} style={{color: "white"}}/>
+            </ListItem>
+            </a>
+
         </List>
       </Drawer>
     </div>

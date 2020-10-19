@@ -8,7 +8,6 @@ export default function Banner({name}) {
     <div className="banner-header">
       <div className="banner-title">
         <h1>{name}</h1>
-        <ExpandMoreIcon />
       </div>
     </div>
   );
