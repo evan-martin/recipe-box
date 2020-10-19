@@ -41,14 +41,7 @@ class Read extends Component {
         <Container maxWidth="lg">
           <div class="read-container">
             <div class="page-header">
-              <Typography
-                className="description"
-                variant="body1"
-                color="textPrimary"
-                component="p"
-              >
-                {this.state.recipe.description}
-              </Typography>
+              <p className="description">{this.state.recipe.description}</p>
             </div>
             <div class="read-banner">
               <img
@@ -59,40 +52,28 @@ class Read extends Component {
             </div>
 
             <div className="whitespace">
-              <h3>Ingredients</h3>
+              <div className="read-container-fluid">
+                <div className="ingredients-container">
+                  <h3>Ingredients</h3>
 
-              <Divider />
+                  <Divider />
 
-              <Typography
-                className="read-paragraph"
-                variant="body1"
-                color="textPrimary"
-                component="p"
-              >
-                {this.state.recipe.ingredients}
-              </Typography>
+                  <p className="read-paragraph">
+                    {this.state.recipe.ingredients}
+                  </p>
+                </div>
+                <div className="ingredients-container">
+                  <h3>Method</h3>
+                  <Divider />
+                  <p className="read-paragraph">{this.state.recipe.method}</p>
+                </div>
+              </div>
 
-              <h3>Method</h3>
-              <Divider />
-              <Typography
-                className="read-paragraph"
-                variant="body1"
-                color="textPrimary"
-                component="p"
-              >
-                {this.state.recipe.method}
-              </Typography>
               <h3>Notes:</h3>
               <Divider />
-              <Typography
-                className="read-paragraph"
-                variant="body1"
-                color="textPrimary"
-                component="p"
-              >
-                {this.state.recipe.notes}
-              </Typography>
+              <p className="read-paragraph">{this.state.recipe.notes}</p>
             </div>
+
             <div className="read-button-bar">
               <ButtonGroup
                 variant="text"

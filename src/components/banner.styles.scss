@@ -4,19 +4,26 @@
   background-size: cover;
   height: 500px;
   margin-top: 90px;
+  display: flex;
+  justify-content: center;
 
   .banner-title {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -150%);
+    align-self: center;
+    transform: translate(0, 130%);
     color: white;
     text-align: center;
 
     h1 {
+      display: flex;
       margin: 0;
       font-size: 3rem;
-      white-space: nowrap;
+      white-space: wrap;
+      font-family: 'Roboto Slab', serif;
     }
   }
+
+
+
+
 }

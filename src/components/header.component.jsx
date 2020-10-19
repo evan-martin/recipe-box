@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import DropdownMenu from "./menu.component.jsx";
+
 import {ReactComponent as ShoppingIcon} from "../assets/recipe-box-icon.svg";
 
 import PersistentDrawerRight from "./menu-drawer.component"
