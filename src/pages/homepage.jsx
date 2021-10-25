@@ -15,6 +15,12 @@ import ScrollToTop from "../components/top-scroll.jsx";
 import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 
+import Box from '@material-ui/core/Box';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+
 
 import "./homepage.scss";
 
@@ -35,7 +41,9 @@ class Homepage extends Component {
       filterTerm: category
     });
   }
-  
+
+
+
 
   componentDidMount() {
     axios.get("/recipe").then(res => {
@@ -64,7 +72,7 @@ class Homepage extends Component {
 
         <Container maxWidth="lg">
 
-          <div className="category-bar">
+          {/* <div className="category-bar">
 
         <div onClick={() => this.setCategory("")} className="avatar">
         <img alt="all" src="https://media3.s-nbcnews.com/i/newscms/2019_05/2736521/190131-stock-taco-bar-food-ew-1220p_bc7c9fc25ecd393bfa3d7d35f216edfc.jpg" />
@@ -124,17 +132,17 @@ class Homepage extends Component {
         <div onClick={() => this.setCategory("booze")} className="avatar">
         <img alt="all" src="https://images.theconversation.com/files/208587/original/file-20180302-152555-1nmke4u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop" />
         <p> Booze </p>
-        </div>
+      </div>
 
-</div>
+          </div> */}
       
 
 
 
-
+          <div className="filter-bar">
           <div className="search-bar">
             <TextField
-              placeholder="Search by name!"
+              placeholder="Search by name"
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -148,6 +156,29 @@ class Homepage extends Component {
               onChange={e => this.setState({searchTerm: e.target.value})}
             />
           </div>
+
+          <div className="category-bar">
+            <TextField
+              select
+              label="Categories"
+              variant="outlined"
+              size="small"
+              helperText="Browse recipes by category"
+              onChange={e => this.setState({filterTerm: e.target.value})}
+            >
+            <MenuItem value="" ><em>All</em></MenuItem>
+            <MenuItem value="pasta" >Pasta</MenuItem>
+            <MenuItem value="chicken" >Chicken</MenuItem>
+            <MenuItem value="soup" >Soup</MenuItem>
+            <MenuItem value="rice" >Rice & Grains</MenuItem>
+            <MenuItem value="baking" >Bread & Baking</MenuItem>
+            <MenuItem value="booze" >Booze</MenuItem>
+            <MenuItem value="dessert" >Dessert</MenuItem>
+
+            </TextField>
+          </div>
+          </div>
+
 
           <SpacingGrid recipes={filteredRecipes} />
 

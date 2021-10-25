@@ -47,7 +47,7 @@ class Read extends Component {
               <img
                 className="read-image"
                 src={this.state.recipe.imageURL}
-                alt="recipe"
+                alt={this.state.recipe.name}
               />
             </div>
 
