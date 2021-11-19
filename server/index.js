@@ -20,7 +20,7 @@ app.use('/recipe', recipe)
 
 dotenv.config({path: './.env'});
 
-const DB = (process.env.DB_REMOTE)
+const DB = "mongodb+srv://evan:Kiwi1212@cluster0.ry97k.mongodb.net/recipe-box?retryWrites=true&w=majority"
 
 mongoose.connect(DB, {
     useNewUrlParser:true,
@@ -30,7 +30,7 @@ mongoose.connect(DB, {
     });
 
 
-    const port = '4000'
+const port = '4000'
 app.set('port', '4000')
 const server = http.createServer(app).listen(port, () => {
   console.log(`listening on ${port}`)

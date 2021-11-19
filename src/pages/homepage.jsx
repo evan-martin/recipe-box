@@ -56,6 +56,7 @@ class Homepage extends Component {
 
   render() {
     const {recipes, searchTerm, filterTerm} = this.state;
+    recipes.reverse();
     const filteredRecipes = recipes.filter(recipe =>
       recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
       && recipe.category.toLowerCase().includes(filterTerm.toLowerCase())
