@@ -1,9 +1,8 @@
 .read-container {
-  margin-left: 2em;
-  margin-right: 2em;
   margin-top: 2em;
   display: flex;
   flex-direction: column;
+  font-family: 'Roboto Slab', serif;
 
   .page-header {
     margin-bottom: 2em;
@@ -12,6 +11,9 @@
     .description {
       padding-left: 1em;
       padding-right: 4em;
+      font-size: 20px;
+      font-weight: lighter;
+      //font-family: 'Montserrat', sans-serif;
     }
   }
 
@@ -19,7 +21,8 @@
     display: flex;
     margin-left: 5em;
     margin-right: 5em;
-    //justify-content: center;
+    justify-content: center;
+
     img {
       max-width: 100%;
       width: auto;
@@ -36,21 +39,35 @@
 
   .whitespace {
     margin-top: 1em;
-    margin-left: 5em;
-    margin-right: 5em;
     white-space: pre-wrap;
     font-size: 20px;
 
+    .read-container-fluid {
+      display: flex;
+      flex-direction: row;
+
+      .ingredients-container {
+        min-width: 50%;
+        padding-left: 2em;
+      }
+    }
+
     .read-paragraph {
-      margin-left: 2em;
       margin-bottom: 2em;
       margin-top: 1em;
+      font-family: 'Roboto', sans-serif;
     }
   }
   @media only screen and (max-width: 600px) {
     .whitespace {
       margin-left: 0;
       margin-right: 0;
+
+      .read-container-fluid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
     }
   }
 

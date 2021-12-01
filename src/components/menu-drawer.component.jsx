@@ -1,157 +1,110 @@
-import React from "react";
-import clsx from "clsx";
-import {makeStyles, useTheme} from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import List from "@material-ui/core/List";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+import Button from '@mui/material/Button';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
+import MenuIcon from '@mui/icons-material/Menu';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import {ReactComponent as ShoppingIcon} from "../assets/recipe-box-icon.svg";
+import { Link } from "react-router-dom"
 
-import "./menu-drawer.styles.scss";
+export default function SwipeableTemporaryDrawer() {
+  const [state, setState] = React.useState({
+    right: false,
+  });
 
-const drawerWidth = 240;
+  const theme = createTheme({
+    palette: {
+      secondary: {
+        main: '#FFFFFF'
+      }
+    }
+  });
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: "flex"
-  },
-  appBar: {
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    })
-  },
-  appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
-    }),
-    marginRight: drawerWidth
-  },
-  menuTitle: {
-    flexGrow: 1
-  },
-  hide: {
-    display: "none"
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0
-  },
-  drawerPaper: {
-    width: drawerWidth
-  },
-  drawerHeader: {
-    display: "flex",
-    alignItems: "center",
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-    justifyContent: "flex-start"
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    }),
-    marginRight: -drawerWidth
-  },
-  contentShift: {
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
-    }),
-    marginRight: 0
-  }
-}));
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event &&
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return;
+    }
 
-export default function PersistentDrawerRight() {
-  const classes = useStyles();
-  const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
+    setState({ ...state, [anchor]: open });
   };
 
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  const list = (anchor) => (
+    <Box
+      sx={{ width: 250, backgroundColor: "black", height: '100%' }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        <Link className="link" to="/" style={{ textDecoration: "none" }}>
+          <ListItem button >
+            <ListItemText primary={"Home"} style={{ color: "white" }} />
+          </ListItem>
+        </Link>
+
+        <Link className="link" to="/create" style={{ textDecoration: "none" }}>
+          <ListItem button >
+            <ListItemText primary={"New Recipe"} style={{ color: "white" }} />
+          </ListItem>
+        </Link>
+
+        <Link className="link" to="/about" style={{ textDecoration: "none" }}>
+          <ListItem button >
+            <ListItemText primary={"About"} style={{ color: "white" }} />
+          </ListItem>
+
+        </Link>
+
+        <a
+          href="https://github.com/evan-martin/recipe-box"
+          style={{ textDecoration: "none" }}
+          target="_blank">
+          <ListItem button >
+            <ListItemText primary={"GitHub"} style={{ color: "white" }} />
+          </ListItem>
+        </a>
+      </List>
+    </Box>
+  );
 
   return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <AppBar
-        style={{background: "black"}}
-        position="fixed"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open
-        })}
-      >
-        <Toolbar>
-          <Typography variant="h6" noWrap className={classes.menuTitle}>
-            Recipe Box
-            <ShoppingIcon className="recipe-box-icon" />
-          </Typography>
+    <div >
+      {['right'].map((anchor) => (
+        <React.Fragment key={anchor}>
 
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="end"
-            onClick={handleDrawerOpen}
-            className={clsx(open && classes.hide)}
+          <ThemeProvider theme={theme}>
+
+            <Button color="secondary" onClick={toggleDrawer(anchor, true)}>
+              <MenuIcon />
+            </Button>
+
+          
+
+          <SwipeableDrawer
+
+            anchor={anchor}
+            open={state[anchor]}
+            onClose={toggleDrawer(anchor, false)}
+            onOpen={toggleDrawer(anchor, true)}
           >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
+            {list(anchor)}
+          </SwipeableDrawer>
 
-      <Drawer
-        className={classes.drawer}
-        variant="persistent"
-        anchor="right"
-        open={open}
-        classes={{
-          paper: classes.drawerPaper
-        }}
-      >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "rtl" ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
-          </IconButton>
-        </div>
-        <Divider />
-        <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
+          </ThemeProvider>
+
+        </React.Fragment>
+      ))}
     </div>
   );
 }

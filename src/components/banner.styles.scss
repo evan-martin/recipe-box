@@ -1,22 +1,30 @@
 .banner-header {
   width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url("https://www.phoenixfm.com/wp-content/uploads/2020/08/heart-healthy-food-1580231690.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6/*  */)), url("../assets/spices1.jpg");
   background-size: cover;
-  height: 500px;
+  height: 30em;
   margin-top: 90px;
+  display: flex;
+  justify-content: center;
+  background-position-y: 50%;
 
   .banner-title {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -150%);
+    align-self: center;
+    transform: translate(0, 90%);
     color: white;
     text-align: center;
 
     h1 {
+      display: flex;
       margin: 0;
       font-size: 3rem;
-      white-space: nowrap;
+      white-space: wrap;
+      font-family: 'Roboto Slab', serif;
     }
   }
+
+
+
+
 }
