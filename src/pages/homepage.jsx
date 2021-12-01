@@ -42,11 +42,8 @@ class Homepage extends Component {
     });
   }
 
-
-
-
   componentDidMount() {
-    axios.get("/recipe").then(res => {
+    axios.get("https://recipe-box-master-api.herokuapp.com/recipe").then(res => {
       this.setState({recipes: res.data});
     });
   }
