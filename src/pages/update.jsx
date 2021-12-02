@@ -41,7 +41,7 @@ class Update extends Component {
     } = this.state.recipe;
 
     axios
-      .put("/recipe/" + this.props.match.params.id, {
+      .put("https://recipe-box-master-api.herokuapp.com/recipe/" + this.props.match.params.id, {
         name,
         imageURL,
         description,
