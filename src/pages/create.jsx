@@ -50,7 +50,7 @@ class Create extends Component {
     } = this.state;
 
     axios
-      .post("https://recipe-box-master-api.herokuapp.com/recipe/", {
+      .post("https://recipe-box-master-api.herokuapp.com/recipe", {
         name,
         imageURL,
         description,

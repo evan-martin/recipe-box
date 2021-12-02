@@ -12,7 +12,7 @@ export default function SpacingGrid({recipes}) {
     <div className="grid-container">
       <Grid container className="root">
         <Grid container justify="center" spacing={3} className="grid">
-          {recipes.reverse().map(({_id, name, imageURL}) => (
+          {recipes.map(({_id, name, imageURL}) => (
             <Grid item>
               <Link to={`/read/${_id}`} style={{textDecoration: "none"}}>
                 <div className="card-image-container">
