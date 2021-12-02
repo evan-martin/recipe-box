@@ -1,9 +1,10 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import axios from "axios";
 
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
+import { MenuItem } from "@material-ui/core";
 
 import "./update.scss";
 
@@ -20,19 +21,20 @@ class Update extends Component {
 
   componentDidMount() {
     axios.get("https://recipe-box-master-api.herokuapp.com/recipe/" + this.props.match.params.id).then(res => {
-      this.setState({recipe: res.data});
+      this.setState({ recipe: res.data });
     });
   }
 
   handleChange(event) {
     const state = this.state.recipe;
     state[event.target.name] = event.target.value;
-    this.setState({recipe: state});
+    this.setState({ recipe: state });
   }
 
   handleSubmit(event) {
     const {
       name,
+      category,
       imageURL,
       description,
       ingredients,
@@ -43,6 +45,7 @@ class Update extends Component {
     axios
       .put("https://recipe-box-master-api.herokuapp.com/recipe/" + this.props.match.params.id, {
         name,
+        category,
         imageURL,
         description,
         ingredients,
@@ -74,6 +77,28 @@ class Update extends Component {
               value={this.state.recipe.name}
               onChange={this.handleChange}
             />
+
+            <div className="category-bar">
+              <TextField
+                select
+                label="Category"
+                variant="outlined"
+                size="medium"
+                helperText="Select a category"
+                onChange={this.handleChange}
+              >
+                <MenuItem value="" ><em>All</em></MenuItem>
+                <MenuItem value="pasta" >Pasta</MenuItem>
+                <MenuItem value="chicken" >Chicken</MenuItem>
+                <MenuItem value="soup" >Soup</MenuItem>
+                <MenuItem value="rice" >Rice & Grains</MenuItem>
+                <MenuItem value="baking" >Bread & Baking</MenuItem>
+                <MenuItem value="booze" >Booze</MenuItem>
+                <MenuItem value="dessert" >Dessert</MenuItem>
+
+              </TextField>
+            </div>
+
             <TextField
               margin="normal"
               label="Image Url"

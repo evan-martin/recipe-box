@@ -1,9 +1,10 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import axios from "axios";
 
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
+import { MenuItem } from "@material-ui/core";
 
 import "./create.scss";
 
@@ -12,6 +13,7 @@ class Create extends Component {
     super(props);
     this.state = {
       name: "",
+      category: "",
       imageURL: "",
       description: "",
       ingredients: "",
@@ -42,6 +44,7 @@ class Create extends Component {
 
     const {
       name,
+      category,
       imageURL,
       description,
       ingredients,
@@ -52,6 +55,7 @@ class Create extends Component {
     axios
       .post("https://recipe-box-master-api.herokuapp.com/recipe", {
         name,
+        category,
         imageURL,
         description,
         ingredients,
@@ -84,6 +88,27 @@ class Create extends Component {
               value={this.state.name}
               onChange={this.handleChange}
             />
+
+            <div className="category-bar">
+              <TextField
+                select
+                label="Category"
+                variant="outlined"
+                size="medium"
+                helperText="Select a category"
+                onChange={this.handleChange}
+              >
+                <MenuItem value="" ><em>All</em></MenuItem>
+                <MenuItem value="pasta" >Pasta</MenuItem>
+                <MenuItem value="chicken" >Chicken</MenuItem>
+                <MenuItem value="soup" >Soup</MenuItem>
+                <MenuItem value="rice" >Rice & Grains</MenuItem>
+                <MenuItem value="baking" >Bread & Baking</MenuItem>
+                <MenuItem value="booze" >Booze</MenuItem>
+                <MenuItem value="dessert" >Dessert</MenuItem>
+
+              </TextField>
+            </div>
             <TextField
               margin="normal"
               label="Image Url"
