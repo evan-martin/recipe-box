@@ -54,7 +54,6 @@ class Homepage extends Component {
 
         <Container maxWidth="lg">
 
-
           <div className="filter-bar">
             <div className="search-bar">
               <TextField

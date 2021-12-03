@@ -3,47 +3,17 @@
   justify-content: center;
 }
 
-.category-bar {
-  margin-top: 2em;
-  display: flex;
-  justify-content: space-between;
-  overflow-x: auto;
-
-  .avatar {
-    display: flex;
-    flex-direction: column;
-    padding-left: 2em;
-    padding-right: 2em;
-
-    cursor: pointer;
-
-    img {
-      display: flex;
-      width: 75px;
-      height: 75px;
-      border-radius: 50%;
-
-      justify-items: center;
-    }
-
-    p {
-      display: flex;
-      justify-content: center;
-      //color: white;
-    }
-  }
-}
-
 .filter-bar {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 2em;
 
   .search-bar {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2em;
+    margin-top: 0.4em;
   }
 
   .category-bar {
@@ -51,9 +21,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 2em;
+    margin-top: 2em;
   }
 }
+
+
 
 .footer-container {
   display: flex;

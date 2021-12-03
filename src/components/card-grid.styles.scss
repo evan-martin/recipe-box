@@ -1,8 +1,6 @@
-.grid-container {
- // justify-content: center;
-  margin-top: 2em;
-
-  
+.grid {
+  justify-content: center;
+  margin-bottom: 2em;
 
   .card-image-container {
     width: 325px;
@@ -30,19 +28,17 @@
     margin-top: -5.5em;
     position: absolute;
     background: rgba(0, 0, 0, 0.5);
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
     display: flex;
     justify-content: center;
-    
-   
 
-  h2 {
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    color: white;
-    position: relative;
-    z-index: 1;
-    align-self: center;
+    h2 {
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      color: white;
+      position: relative;
+      z-index: 1;
+      align-self: center;
+    }
   }
-}
 }
