@@ -1,6 +1,6 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
@@ -22,7 +22,7 @@ class Read extends Component {
 
   componentDidMount() {
     axios.get("https://recipe-box-master-api.herokuapp.com/recipe/" + this.props.match.params.id).then(res => {
-      this.setState({recipe: res.data});
+      this.setState({ recipe: res.data });
     });
   }
 
@@ -40,15 +40,17 @@ class Read extends Component {
         </div>
         <Container maxWidth="lg">
           <div class="read-container">
-            <div class="page-header">
-              <p className="description">{this.state.recipe.description}</p>
-            </div>
+
             <div class="read-banner">
               <img
                 className="read-image"
                 src={this.state.recipe.imageURL}
                 alt={this.state.recipe.name}
               />
+            </div>
+
+            <div class="page-header">
+              <p className="description">{this.state.recipe.description}</p>
             </div>
 
             <div className="whitespace">
@@ -62,6 +64,7 @@ class Read extends Component {
                     {this.state.recipe.ingredients}
                   </p>
                 </div>
+
                 <div className="ingredients-container">
                   <h3>Method</h3>
                   <Divider />
