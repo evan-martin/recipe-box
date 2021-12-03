@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import {BrowserRouter, Route} from "react-router-dom";
+import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 
 import Homepage from "./pages/homepage";
 import Create from "./pages/create";
@@ -7,7 +7,6 @@ import Read from "./pages/read";
 import Update from "./pages/update";
 import Header from "./components/header.component.jsx";
 import About from "./pages/about.jsx";
-import ScrollToTop from "./components/top-scroll.jsx";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
@@ -22,13 +21,12 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <ScrollToTop />
         <div>
           <React.Fragment>
             <CssBaseline />
 
             <Header />
-            
+
 
             <div>
               <Route exact path="/" component={Homepage} />
