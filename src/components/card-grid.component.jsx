@@ -3,13 +3,10 @@ import { Link } from "react-router-dom";
 
 import Grid from "@material-ui/core/Grid";
 
-
 import "./card-grid.styles.scss";
 
 export default function SpacingGrid({ recipes }) {
   return (
-    //<div className="grid-container">
-
         <Grid container spacing={3} className="grid">
           {recipes.map(({ _id, name, imageURL }) => (
             <Grid item>
@@ -25,10 +22,5 @@ export default function SpacingGrid({ recipes }) {
             </Grid>
           ))}
         </Grid>
-
-   //</div>
-
-
-
   );
 }
