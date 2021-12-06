@@ -10,6 +10,7 @@ import Container from "@material-ui/core/Container";
 import MenuItem from '@material-ui/core/MenuItem';
 
 import FabBar from "../components/fab-bar.component.jsx";
+import SideButtonGroup from "../components/side-btn-group.component.jsx";
 
 import "./homepage.scss";
 
@@ -100,10 +101,11 @@ class Homepage extends Component {
 
 
         </Container>
-        <div className="footer-container">
-          <FabBar />
+        <div className="fab-container">
+          {/* <FabBar /> */}
+          <SideButtonGroup />
         </div>
-        
+
       </div>
     );
   }
