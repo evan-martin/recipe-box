@@ -8,8 +8,9 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import Banner from "../components/banner.component.jsx";
 import Container from "@material-ui/core/Container";
 import MenuItem from '@material-ui/core/MenuItem';
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
-import FabBar from "../components/fab-bar.component.jsx";
 import SideButtonGroup from "../components/side-btn-group.component.jsx";
 
 import "./homepage.scss";
@@ -20,7 +21,9 @@ class Homepage extends Component {
     this.state = {
       recipes: [],
       searchTerm: "",
-      filterTerm: ""
+      filterTerm: "",
+      loading: true,
+      dbfail: false,
     };
 
     this.setCategory = this.setCategory.bind(this);
@@ -34,8 +37,13 @@ class Homepage extends Component {
 
   componentDidMount() {
     axios.get("https://recipe-box-master-api.herokuapp.com/recipe").then(res => {
-      this.setState({ recipes: res.data });
-    });
+      this.setState({ recipes: res.data, loading: false });
+
+    })
+      .catch(error => {
+        console.log(error)
+        this.setState({ dbfail: true, loading:false })
+      })
   }
 
   render() {
@@ -45,6 +53,20 @@ class Homepage extends Component {
       recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
       && recipe.category.toLowerCase().includes(filterTerm.toLowerCase())
     );
+
+    let content;
+
+    if (this.state.loading) {
+      content = <Box sx={{ display: "flex", justifyContent: "center", height: '100vh'}}>
+        <CircularProgress size='17em' />
+      </Box>
+    }
+    else if (this.state.dbfail) {
+      content = <div className="fail-message"> Database failed to load, check the console for error message. </div>
+    }
+    else {
+      content = <SpacingGrid recipes={filteredRecipes} />
+    }
 
     return (
 
@@ -96,13 +118,12 @@ class Homepage extends Component {
           </div>
 
 
-          <SpacingGrid recipes={filteredRecipes} />
+          {content}
 
 
 
         </Container>
         <div className="fab-container">
-          {/* <FabBar /> */}
           <SideButtonGroup />
         </div>
 
