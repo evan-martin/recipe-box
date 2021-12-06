@@ -1,12 +1,16 @@
-.about-header {
-  padding-left: 2em;
-  margin-top: 150px;
-}
+.about-container {
+  min-height: 75vh;
 
-.about-body {
-  padding: 0 5em 5em;
+  .about-header {
+    padding-left: 2em;
+    margin-top: 150px;
+  }
 
-  .signature {
-    padding-top: 1em;
+  .about-body {
+    padding: 0 5em 5em;
+
+    .signature {
+      padding-top: 1em;
+    }
   }
 }

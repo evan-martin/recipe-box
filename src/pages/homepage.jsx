@@ -9,7 +9,7 @@ import Banner from "../components/banner.component.jsx";
 import Container from "@material-ui/core/Container";
 import MenuItem from '@material-ui/core/MenuItem';
 
-import Footer from "../components/footer.component.jsx";
+import FabBar from "../components/fab-bar.component.jsx";
 
 import "./homepage.scss";
 
@@ -101,7 +101,7 @@ class Homepage extends Component {
 
         </Container>
         <div className="footer-container">
-          <Footer />
+          <FabBar />
         </div>
         
       </div>

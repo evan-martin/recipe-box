@@ -7,13 +7,9 @@ import Read from "./pages/read";
 import Update from "./pages/update";
 import Header from "./components/header.component.jsx";
 import About from "./pages/about.jsx";
-
+import Footer from "./components/footer.component"
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
-import Paper from "@material-ui/core/Paper";
-import Divider from "@material-ui/core/Divider";
-import Banner from "./components/banner.component.jsx";
-import PersistentDrawerRight from "./components/menu-drawer.component.jsx";
 
 import "./App.scss";
 
@@ -40,6 +36,7 @@ class App extends Component {
             </div>
           </React.Fragment>
         </div>
+        <Footer />
       </BrowserRouter>
     );
   }
