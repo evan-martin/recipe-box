@@ -33,8 +33,8 @@ export default function SideButtonGroup() {
                 <ButtonGroup
                     orientation="vertical"
                     variant="contained">
-                    <Button onClick={scrollToTop} color="secondary"><ArrowUpwardIcon /></Button>
-                    <Button href="/create"><AddIcon /></Button>
+                    <Button size="large" onClick={scrollToTop} color="secondary"><ArrowUpwardIcon /></Button>
+                    <Button size="large" href="/create"><AddIcon /></Button>
                 </ButtonGroup>
             </Box>
         </div>
