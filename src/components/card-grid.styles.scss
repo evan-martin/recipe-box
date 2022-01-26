@@ -7,6 +7,7 @@
     height: 280px;
     object-fit: contain;
     z-index: -2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     .media {
       width: 100%;
@@ -14,17 +15,17 @@
       object-fit: cover;
     }
 
-    &:hover {
-      .media {
-        transform: scale(1.03);
-        transition: transform 3s cubic-bezier(0.25, 0.25, 0.25, 0.25);
-      }
-    }
+    // &:hover {
+    //   .media {
+    //     transform: scale(1.03);
+    //     transition: transform 3s cubic-bezier(0.25, 0.25, 0.25, 0.25);
+    //   }
+    // }
   }
 
   .recipe-title {
     width: 325px;
-    height: 89px;
+    height: 88px;
     margin-top: -5.5em;
     position: absolute;
     background: rgba(0, 0, 0, 0.5);

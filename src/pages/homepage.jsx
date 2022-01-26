@@ -58,7 +58,7 @@ class Homepage extends Component {
 
     if (this.state.loading) {
       content = <Box sx={{ display: "flex", justifyContent: "center", height: '100vh'}}>
-        <CircularProgress size='17em' />
+        <CircularProgress size='10em' />
       </Box>
     }
     else if (this.state.dbfail) {
