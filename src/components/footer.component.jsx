@@ -17,7 +17,7 @@ export default function Header() {
     return (
         <div className="footer">
             <div className="logo">
-                <a href="https://github.com/evan-martin/recipe-box" target="_blank" style={{ textDecoration: "none" }}>
+                <a href="https://github.com/evan-martin/recipe-box" rel="noopener" style={{ textDecoration: "none" }}>
                     <h4>Evan Martin</h4>
                     <ThemeProvider theme={theme}>
                         <GitHubIcon color="secondary" />

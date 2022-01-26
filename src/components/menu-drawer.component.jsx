@@ -47,7 +47,7 @@ export default function SwipeableTemporaryDrawer() {
         </ListItem>
         <Link className="link" to="/" style={{ textDecoration: "none" }}>
           <ListItem button >
-            <ListItemText primary={"Home"} style={{ color: "white" }} />     
+            <ListItemText primary={"Home"} style={{ color: "white" }} />
           </ListItem>
         </Link>
         <Link className="link" to="/create" style={{ textDecoration: "none" }}>
@@ -66,7 +66,7 @@ export default function SwipeableTemporaryDrawer() {
         <a
           href="https://github.com/evan-martin/recipe-box"
           style={{ textDecoration: "none" }}
-          target="_blank">
+          rel="noopener">
           <ListItem button >
             <ListItemText primary={"GitHub"} style={{ color: "white" }} />
           </ListItem>

@@ -17,7 +17,7 @@ export default function About() {
           color="textPrimary"
           component="p"
         >
-          //TODO
+          TODO
         </Typography>
         <div className="signature">
           <Typography

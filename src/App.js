@@ -11,8 +11,6 @@ import Footer from "./components/footer.component"
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 
-import "./App.scss";
-
 class App extends Component {
   render() {
     return (

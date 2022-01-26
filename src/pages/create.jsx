@@ -69,7 +69,6 @@ class Create extends Component {
   }
 
   render() {
-    const isEnabled = this.canSubmit();
     return (
       <div className="form-container">
         <div>
