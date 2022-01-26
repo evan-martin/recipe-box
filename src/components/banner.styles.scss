@@ -23,8 +23,10 @@
       font-family: 'Roboto Slab', serif;
     }
   }
+}
 
-
-
-
+@media only screen and (max-width: 600px) {
+  .banner-header {
+    height: 20em;
+  }
 }
