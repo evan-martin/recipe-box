@@ -16,6 +16,7 @@ class Update extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -29,6 +30,14 @@ class Update extends Component {
     const state = this.state.recipe;
     state[event.target.name] = event.target.value;
     this.setState({ recipe: state });
+  }
+
+  handleDelete() {
+    axios
+      .delete("https://recipe-box-master-api.herokuapp.com/recipe/" + this.props.match.params.id)
+      .then(() => {
+        this.props.history.push("/");
+      });
   }
 
   handleSubmit(event) {
@@ -52,7 +61,7 @@ class Update extends Component {
         method,
         notes
       })
-      .then(result => {
+      .then(() => {
         this.props.history.push("/read/" + this.props.match.params.id);
       });
     event.preventDefault();
@@ -164,7 +173,7 @@ class Update extends Component {
             />
 
             <div className="update-button-bar">
-              <Button variant="text" color="secondary">
+              <Button variant="text" color="secondary" onClick={this.handleDelete}>
                 Delete
               </Button>
 
