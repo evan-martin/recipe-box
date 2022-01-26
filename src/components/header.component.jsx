@@ -15,7 +15,6 @@ export default function Header() {
         </Link>
         <ShoppingIcon className="recipe-box-icon" />
       </div>
-
       <div className="menu">
         <PersistentDrawerRight />
       </div>

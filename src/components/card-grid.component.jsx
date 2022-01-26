@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 
 import Grid from "@material-ui/core/Grid";
 
@@ -19,14 +20,14 @@ export default function SpacingGrid({ recipes }) {
     <Grid container spacing={3} className="grid">
       {recipes.map(({ _id, name, imageURL }) => (
         <Grid item>
-          <Link to={`/read/${_id}`} style={{ textDecoration: "none" }}>
+          <HashLink to={`/read/${_id}#top`} style={{ textDecoration: "none" }}>
             <div className="card-image-container">
               <img className="media" src={checkImageURL(imageURL)} alt={name} />
             </div>
             <div className="recipe-title">
               <h2>{name}</h2>
             </div>
-          </Link>
+          </HashLink>
         </Grid>
       ))}
     </Grid>
