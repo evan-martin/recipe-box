@@ -7,7 +7,6 @@ import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Divider from "@material-ui/core/Divider";
 import Container from "@material-ui/core/Container";
 
-import Banner from "../components/banner.component";
 
 import "./read.scss";
 
@@ -33,68 +32,52 @@ class Read extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <Banner name={this.state.recipe.name} />
-        </div>
-        <Container maxWidth="lg">
-          <div class="read-container">
-
-            <div class="read-banner">
-              <img
-                className="read-image"
+      <Container maxWidth="lg">
+        <div class="read-container">
+          <div className="read-header-container">
+            <div class="read-image-container">
+              <img className="read-image"
                 src={this.state.recipe.imageURL}
                 alt={this.state.recipe.name}
               />
             </div>
-
-            <div class="page-header">
-              <p className="description">{this.state.recipe.description}</p>
-            </div>
-
-            <div className="whitespace">
-              <div className="read-container-fluid">
-                <div className="ingredients-container">
-                  <h3>Ingredients</h3>
-
-                  <Divider />
-
-                  <p className="read-paragraph">
-                    {this.state.recipe.ingredients}
-                  </p>
-                </div>
-
-                <div className="ingredients-container">
-                  <h3>Method</h3>
-                  <Divider />
-                  <p className="read-paragraph">{this.state.recipe.method}</p>
-                </div>
-              </div>
-
-              <h3>Notes:</h3>
-              <Divider />
-              <p className="read-paragraph">{this.state.recipe.notes}</p>
-            </div>
-
-            <div className="read-button-bar">
-              <ButtonGroup
-                variant="text"
-                color="primary"
-                aria-label="text primary button group"
-              >
-                <Link to={`/update/${this.state.recipe._id}`}>
-                  <Button color="primary">Edit</Button>
-                </Link>
-                <Link id="link" to="/">
-                  <Button color="primary">Home</Button>
-                </Link>
-              </ButtonGroup>
-            </div>
-            {/* <div><button type="submit" onClick={this.removeRecipe.bind(this, this.state.recipe.id)}>Delete</button></div> */}
+            <h2 className="recipe-name">{this.state.recipe.name}</h2>
           </div>
-        </Container>
-      </div>
+          <div className="ingredient-method-container">
+            <div className="ingredients-container">
+              <h3 className="ingredients-heading">Ingredients</h3>
+              <Divider />
+              <p className="ingredients-content">
+                {this.state.recipe.ingredients}
+              </p>
+            </div>
+            <div className="method-container">
+              <h3 className="method-heading">Method</h3>
+              <Divider />
+              <p className="method-content">{this.state.recipe.method}</p>
+            </div>
+          </div>
+          <div className="notes-container">
+            <h3>Notes:</h3>
+            <Divider />
+            <p className="notes">{this.state.recipe.notes}</p>
+          </div>
+
+          <div className="read-button-bar">
+            <ButtonGroup variant="text">
+              <Link to={`/update/${this.state.recipe._id}`}>
+                <Button color="secondary">Edit</Button>
+              </Link>
+              <Link id="link" to="/">
+                <Button color="primary">Back</Button>
+              </Link>
+            </ButtonGroup>
+          </div>
+        </div>
+      </Container>
+
     );
   }
 }
+
 export default Read;

@@ -38,7 +38,6 @@ class Homepage extends Component {
   componentDidMount() {
     axios.get("https://recipe-box-master-api.herokuapp.com/recipe").then(res => {
       this.setState({ recipes: res.data, loading: false });
-
     })
       .catch(error => {
         console.log(error)
@@ -47,6 +46,7 @@ class Homepage extends Component {
   }
 
   render() {
+
     const { recipes, searchTerm, filterTerm } = this.state;
     recipes.reverse();
     const filteredRecipes = recipes.filter(recipe =>
