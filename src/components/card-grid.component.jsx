@@ -20,14 +20,16 @@ export default function SpacingGrid({ recipes }) {
     <Grid container spacing={3} className="grid">
       {recipes.map(({ _id, name, imageURL }) => (
         <Grid item>
-          <HashLink to={`/read/${_id}#top`} style={{ textDecoration: "none" }}>
-            <div className="card-image-container">
-              <img className="media" src={checkImageURL(imageURL)} alt={name} />
-            </div>
-            <div className="recipe-title">
-              <h2>{name}</h2>
-            </div>
-          </HashLink>
+          <div className="grid-item">
+            <HashLink to={`/read/${_id}#top`} style={{ textDecoration: "none" }}>
+              <div className="card-image-container">
+                <img className="media" src={checkImageURL(imageURL)} alt={name} />
+              </div>
+              <div className="recipe-title">
+                <h3>{name}</h3>
+              </div>
+            </HashLink>
+          </div>
         </Grid>
       ))}
     </Grid>
