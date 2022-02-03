@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 import Button from "@material-ui/core/Button";
-import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Divider from "@material-ui/core/Divider";
 import Container from "@material-ui/core/Container";
 
@@ -62,20 +60,12 @@ class Read extends Component {
             <Divider />
             <p className="notes">{this.state.recipe.notes}</p>
           </div>
-
           <div className="read-button-bar">
-            <ButtonGroup variant="text">
-              <Link to={`/update/${this.state.recipe._id}`}>
-                <Button color="secondary">Edit</Button>
-              </Link>
-              <Link id="link" to="/">
-                <Button color="primary">Back</Button>
-              </Link>
-            </ButtonGroup>
+              <Button href={`/update/${this.state.recipe._id}`} variant="contained" color="secondary">Edit</Button>
+              <Button href="/" variant="contained" color="primary">Back</Button>
           </div>
         </div>
       </Container>
-
     );
   }
 }
