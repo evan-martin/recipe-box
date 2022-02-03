@@ -76,6 +76,14 @@ class Homepage extends Component {
         </div>
 
         <Container maxWidth="lg">
+        <Box
+      component="form"
+      sx={{
+        '& .MuiTextField-root': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
 
           <div className="filter-bar">
             <div className="search-bar">
@@ -101,7 +109,6 @@ class Homepage extends Component {
                 label="Categories"
                 variant="outlined"
                 size="small"
-                helperText="Browse recipes by category"
                 onChange={e => this.setState({ filterTerm: e.target.value })}
               >
                 <MenuItem value="" ><em>All</em></MenuItem>
@@ -116,6 +123,7 @@ class Homepage extends Component {
               </TextField>
             </div>
           </div>
+          </Box>
 
 
           {content}

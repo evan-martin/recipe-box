@@ -81,15 +81,10 @@ export default function SwipeableTemporaryDrawer() {
         <React.Fragment key={anchor}>
 
           <ThemeProvider theme={theme}>
-
             <Button color="secondary" onClick={toggleDrawer(anchor, true)}>
-              <MenuIcon />
+              <MenuIcon sx={{ fontSize: 30 }}/>
             </Button>
-
-
-
             <SwipeableDrawer
-
               anchor={anchor}
               open={state[anchor]}
               onClose={toggleDrawer(anchor, false)}
@@ -97,9 +92,7 @@ export default function SwipeableTemporaryDrawer() {
             >
               {list(anchor)}
             </SwipeableDrawer>
-
           </ThemeProvider>
-
         </React.Fragment>
       ))}
     </div>

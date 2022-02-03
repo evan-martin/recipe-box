@@ -11,7 +11,7 @@ export default function Header() {
     <div className="header">
       <div className="logo">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <h1>RecipeBox</h1>
+        <h1>RecipeBox</h1>
         </Link>
         <ShoppingIcon className="recipe-box-icon" />
       </div>

@@ -6,7 +6,7 @@ export default function Banner({name, category}) {
   return (
     <div className="banner-header">
       <div className="banner-title">
-        <h1>{name}</h1>
+        <h1>Recipes</h1>
       </div>
   
     </div>
