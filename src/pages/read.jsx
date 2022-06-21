@@ -17,13 +17,13 @@ class Read extends Component {
   }
 
   componentDidMount() {
-    axios.get("https://recipe-box-master-api.herokuapp.com/recipe/" + this.props.match.params.id).then(res => {
+    axios.get("https://recipe-box-master-api.herokuapp.com/" + this.props.match.params.id).then(res => {
       this.setState({ recipe: res.data });
     });
   }
 
   removeRecipe() {
-    axios.delete("https://recipe-box-master-api.herokuapp.com/recipe/" + this.props.match.params.id).then(res => {
+    axios.delete("https://recipe-box-master-api.herokuapp.com/" + this.props.match.params.id).then(res => {
       this.props.history.push("/");
     });
   }
