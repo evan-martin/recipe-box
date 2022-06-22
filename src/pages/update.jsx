@@ -34,7 +34,7 @@ class Update extends Component {
 
   handleDelete() {
     axios
-      .delete("https://recipe-box-master-api.herokuapp.com/recipe/" + this.props.match.params.id)
+      .delete("https://recipe-box-master-api.herokuapp.com/" + this.props.match.params.id)
       .then(() => {
         this.props.history.push("/");
       });
@@ -52,7 +52,7 @@ class Update extends Component {
     } = this.state.recipe;
 
     axios
-      .put("https://recipe-box-master-api.herokuapp.com/recipe/" + this.props.match.params.id, {
+      .put("https://recipe-box-master-api.herokuapp.com/" + this.props.match.params.id, {
         name,
         category,
         imageURL,
