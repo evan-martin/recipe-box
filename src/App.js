@@ -15,25 +15,18 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
+        <CssBaseline />
+        <Header />
         <div>
-          <React.Fragment>
-            <CssBaseline />
-
-            <Header />
-
-
-            <div>
-              <Route exact path="/" component={Homepage} />
-              <Route path="/read/:id" component={Read} />
-
-              <Container maxWidth="lg">
-                <Route path="/create" component={Create} />
-                <Route path="/update/:id" component={Update} />
-                <Route path="/about" component={About} />
-              </Container>
-            </div>
-          </React.Fragment>
+          <Route exact path="/" component={Homepage} />
+          <Route path="/read/:id" component={Read} />
+          <Container maxWidth="lg">
+            <Route path="/create" component={Create} />
+            <Route path="/update/:id" component={Update} />
+            <Route path="/about" component={About} />
+          </Container>
         </div>
+
         <Footer />
       </BrowserRouter>
     );

@@ -37,7 +37,7 @@ export default function SwipeableTemporaryDrawer() {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: 250, backgroundColor: "black", height: '100%' }}
+      sx={{ width: 250, backgroundColor: "#1e1e1e", height: '100%' }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
