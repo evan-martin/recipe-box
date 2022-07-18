@@ -1,16 +1,6 @@
-.form-container {
-  margin-left: 2em;
-  margin-right: 2em;
-  padding-top: 150px;
+.submit-button-bar {
   display: flex;
-  flex-direction: column;
-
-  .submit-button-bar {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 2em;
-    padding-top: 1em;
-
-    .submit-btn-group {}
-  }
+  justify-content: flex-end;
+  margin-bottom: 2em;
+  padding-top: 1em;
 }

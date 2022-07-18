@@ -1,9 +1,10 @@
 .form-container {
-  margin-left: 2em;
-  margin-right: 2em;
-  margin-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 7em;
   display: flex;
   flex-direction: column;
+  background-color: #f7f6f3;
 
   .update-button-bar {
     display: flex;
@@ -11,9 +12,11 @@
     justify-content: space-between;
     margin-bottom: 2em;
     padding-top: 1em;
+  }
+}
 
-    .update-btn-group {
-      display: flex;
-    }
+@media only screen and (max-width: 600px) {
+  .form-container{
+    padding: 2em .5em 0 .5em;
   }
 }

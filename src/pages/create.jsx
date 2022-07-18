@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 import { MenuItem } from "@material-ui/core";
 
 import "./create.scss";
@@ -175,16 +175,14 @@ class Create extends Component {
             <div className="submit-button-bar">
               <ButtonGroup
                 className="submit-btn-group"
-                variant="text"
-                color="primary"
+                variant="contained"
                 aria-label="text primary button group"
               >
+                <Button color="secondary" onClick={() => this.props.history.push("/")}>
+                  Cancel
+                </Button>
                 <Button type="submit" value="Submit">
                   Submit
-                </Button>
-
-                <Button onClick={() => this.props.history.push("/")}>
-                  Cancel
                 </Button>
               </ButtonGroup>
             </div>

@@ -41,7 +41,7 @@ class Homepage extends Component {
     })
       .catch(error => {
         console.log(error)
-        this.setState({ dbfail: true, loading:false })
+        this.setState({ dbfail: true, loading: false })
       })
   }
 
@@ -57,7 +57,7 @@ class Homepage extends Component {
     let content;
 
     if (this.state.loading) {
-      content = <Box sx={{ display: "flex", justifyContent: "center", height: '100vh'}}>
+      content = <Box sx={{ display: "flex", justifyContent: "center", height: '100vh' }}>
         <CircularProgress size='10em' />
       </Box>
     }
@@ -75,54 +75,54 @@ class Homepage extends Component {
           <Banner name="Recipes" category={filterTerm} />
         </div>
 
-        <Container maxWidth="lg">
-        <Box
-      component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
-      noValidate
-      autoComplete="off"
-    >
+        <Container maxWidth="lg" className="home-container">
+          <Box
+            component="form"
+            sx={{
+              '& .MuiTextField-root': { m: 1, width: '25ch' },
+            }}
+            noValidate
+            autoComplete="off"
+          >
 
-          <div className="filter-bar">
-            <div className="search-bar">
-              <TextField
-                placeholder="Search by name"
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <SearchIcon />
-                    </InputAdornment>
-                  )
-                }}
-                variant="outlined"
-                size="small"
-                type="search"
-                onChange={e => this.setState({ searchTerm: e.target.value })}
-              />
+            <div className="filter-bar">
+              <div className="search-bar">
+                <TextField
+                  placeholder="Search by name"
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <SearchIcon />
+                      </InputAdornment>
+                    )
+                  }}
+                  variant="outlined"
+                  size="small"
+                  type="search"
+                  onChange={e => this.setState({ searchTerm: e.target.value })}
+                />
+              </div>
+
+              <div className="category-bar">
+                <TextField
+                  select
+                  label="Categories"
+                  variant="outlined"
+                  size="small"
+                  onChange={e => this.setState({ filterTerm: e.target.value })}
+                >
+                  <MenuItem value="" ><em>All</em></MenuItem>
+                  <MenuItem value="pasta" >Pasta</MenuItem>
+                  <MenuItem value="chicken" >Chicken</MenuItem>
+                  <MenuItem value="soup" >Soup</MenuItem>
+                  <MenuItem value="rice" >Rice & Grains</MenuItem>
+                  <MenuItem value="baking" >Bread & Baking</MenuItem>
+                  <MenuItem value="booze" >Booze</MenuItem>
+                  <MenuItem value="dessert" >Dessert</MenuItem>
+
+                </TextField>
+              </div>
             </div>
-
-            <div className="category-bar">
-              <TextField
-                select
-                label="Categories"
-                variant="outlined"
-                size="small"
-                onChange={e => this.setState({ filterTerm: e.target.value })}
-              >
-                <MenuItem value="" ><em>All</em></MenuItem>
-                <MenuItem value="pasta" >Pasta</MenuItem>
-                <MenuItem value="chicken" >Chicken</MenuItem>
-                <MenuItem value="soup" >Soup</MenuItem>
-                <MenuItem value="rice" >Rice & Grains</MenuItem>
-                <MenuItem value="baking" >Bread & Baking</MenuItem>
-                <MenuItem value="booze" >Booze</MenuItem>
-                <MenuItem value="dessert" >Dessert</MenuItem>
-
-              </TextField>
-            </div>
-          </div>
           </Box>
 
 

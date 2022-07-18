@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 import { MenuItem } from "@material-ui/core";
 
 import "./update.scss";
@@ -173,18 +173,16 @@ class Update extends Component {
             />
 
             <div className="update-button-bar">
-              <Button variant="text" color="secondary" onClick={this.handleDelete}>
+              <Button variant="contained" color="error" onClick={this.handleDelete}>
                 Delete
               </Button>
 
               <ButtonGroup
-                className="update-btn-group"
-                variant="text"
-                color="primary"
+                variant="contained"
                 aria-label="text primary button group"
               >
                 <Button
-                  color="primary"
+                  color="secondary"
                   onClick={() =>
                     this.props.history.push(
                       "/read/" + this.props.match.params.id

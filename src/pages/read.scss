@@ -1,9 +1,9 @@
 .read-container {
-  margin-top: 8em;
+  padding-top: 8em;
   display: flex;
   flex-direction: column;
   font-family: "Roboto Slab", sans-serif;
-  min-height: 80vh;
+  min-height: 92vh;
 
   .read-header-container {
     display: flex;
@@ -41,8 +41,8 @@
     flex-direction: row;
     white-space: pre-wrap;
     background-color: #f7f6f3;
-    padding-top: 6em;
-    margin-top: -6em;
+    padding-top: 7em;
+    margin-top: -7em;
 
     .ingredients-container {
       min-width: 50%;
@@ -51,6 +51,7 @@
 
       .ingredients-content {
         font-family: "Jost", sans-serif;
+        font-size: 1.2em;
       }
     }
 
@@ -65,6 +66,7 @@
 
       .method-content {
         font-family: "Jost", sans-serif;
+        font-size: 1.2em;
       }
     }
   }
